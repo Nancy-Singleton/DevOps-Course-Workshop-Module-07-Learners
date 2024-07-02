@@ -50,6 +50,7 @@ jobs:
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_CHANNEL: "alerts"
+        SLACK_COLOR: ${{ job.status }}
         SLACK_MESSAGE_ON_SUCCESS: "Success!"
         SLACK_MESSAGE_ON_FAILURE: "Failed"
         SLACK_MESSAGE_ON_CANCEL: "Cancelled"
