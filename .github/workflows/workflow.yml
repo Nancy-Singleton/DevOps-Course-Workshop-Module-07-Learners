@@ -37,7 +37,7 @@ jobs:
       run: npm ci
 
     - name: Build
-      run: npm  build
+      run: npm build
 
     - name: Typescript tests
       run: npm t
@@ -47,6 +47,7 @@ jobs:
 
     - name: Slack Notification
       uses: rtCamp/action-slack-notify@v2
+      if: ${{ always() }}
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_CHANNEL: "alerts"
@@ -54,3 +55,4 @@ jobs:
         SLACK_MESSAGE_ON_SUCCESS: "Success!"
         SLACK_MESSAGE_ON_FAILURE: "Failed"
         SLACK_MESSAGE_ON_CANCEL: "Cancelled"
+
