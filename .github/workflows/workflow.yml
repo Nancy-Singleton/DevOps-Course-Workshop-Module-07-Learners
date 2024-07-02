@@ -34,4 +34,13 @@ jobs:
     - uses: actions/setup-node@v4
 
     - name: Install dependencies
-      run: npm install
+      run: npm ci
+
+    - name: Build
+      run: npm build
+
+    - name: Typescript tests
+      run: npm t
+
+    - name: Lint
+      run: npm run lint
