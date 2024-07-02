@@ -25,6 +25,9 @@ jobs:
   node:
     name: node
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./DotnetTemplate.Web
     steps:
     - uses: actions/checkout@v4
 
